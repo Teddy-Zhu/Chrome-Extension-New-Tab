@@ -1,0 +1,24 @@
+﻿{
+"name": "LC4E New Tab",
+"author": "Teddy zhu",
+"version": "1.0",
+"manifest_version" : 2,
+"description": "导航页拓展.",
+"permissions": [
+    "tabs",
+    "unlimited_storage",
+    "chrome://favicon/",
+    "<all_urls>",
+	"cookies",
+	"http://*/*",
+	"https://*/*"
+  ],
+"icons":{"16":"static/img/128.png","48":"static/img/48.png","128":"static/img/128.png"},
+"content_scripts":[{ 
+	"matches":["http://*/*","https://*/*"],
+	"js" : ["static/js/jquery-2.1.4.min.js","static/js/index.js"],
+	"run_at": "document_idle"
+}],
+"content_security_policy": "script-src  'self'; object-src 'self';",
+"chrome_url_overrides": {"newtab":"newtab.html"}
+}
